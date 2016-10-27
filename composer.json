@@ -1,0 +1,22 @@
+{
+    "name": "reisraff/phulp-scss-compiler",
+    "description": "The scss-compiler addon for phulp",
+    "keywords": ["phulpplugin", "phulp", "php", "scss-compiler"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Rafael Reis",
+            "email": "reisraff@gmail.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "Phulp\\ScssCompiler\\" : "src"
+        }
+    },
+    "require": {
+        "leafo/scssphp": "^0.6.6",
+        "reisraff/phulp": "~1.7"
+    }
+}
