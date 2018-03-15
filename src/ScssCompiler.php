@@ -29,17 +29,15 @@ class ScssCompiler implements \Phulp\PipeInterface
     public function execute(\Phulp\Source $src)
     {
         foreach ($src->getDistFiles() as $key => $file) {
-            if (preg_match('/\.scss$/', $file->getName()) || preg_match('/\.scss$/', $file->getDistpathname())) {
-                $scss = new Compiler();
+            $scss = new Compiler();
 
-                if ($this->options['import_paths'] && is_array($this->options['import_paths'])) {
-                    $scss->setImportPaths($this->options['import_paths']);
-                }
-
-                $css = $scss->compile($file->getContent());
-                $file->setContent($css);
-                $file->setDistpathname(preg_replace('/scss$/', 'css', $file->getDistpathname()));
+            if ($this->options['import_paths'] && is_array($this->options['import_paths'])) {
+                $scss->setImportPaths($this->options['import_paths']);
             }
+
+            $css = $scss->compile($file->getContent());
+            $file->setContent($css);
+            $file->setDistpathname(preg_replace('/scss$/', 'css', $file->getDistpathname()));
         }
     }
 }

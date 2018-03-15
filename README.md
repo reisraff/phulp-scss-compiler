@@ -17,7 +17,10 @@ use Phulp\ScssCompiler\ScssCompiler;
 
 $phulp->task('scss', function ($phulp) {
     $phulp->src(['src/'], '/scss$/')
-        ->pipe(new ScssCompiler);
+        // compile
+        ->pipe(new ScssCompiler)
+        // write your compiled files
+        ->pipe($phulp->dest('dist/'));
 });
 
 ```
@@ -31,6 +34,9 @@ $phulp->task('scss', function ($phulp) {
 
 use Phulp\ScssCompiler\ScssCompiler;
 
-$compiler = new ScssCompiler(['import_paths' => ['src/styles/']]);
+$compiler = new ScssCompiler([
+    // default: null
+    'import_paths' => ['src/styles/']
+]);
 
 ```
