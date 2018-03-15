@@ -1,6 +1,6 @@
 {
     "name": "reisraff/phulp-scss-compiler",
-    "description": "The scss-compiler addon for phulp",
+    "description": "Compile your scss files",
     "keywords": ["phulpplugin", "phulp", "php", "scss-compiler", "compiler", "scss"],
     "license": "MIT",
     "type": "library",
